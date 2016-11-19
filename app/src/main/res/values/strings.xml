@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">GankIo</string>
+    <string name="title_activity_picture">picture</string>
+
+    <!-- main activity -->
+    <string name="gankIo">Gank.io</string>
+    <string name="ganker">干客</string>
+    <string name="meizhi_name">妹纸</string>
+    <string name="toolbar_title">Gank</string>
+    <string name="success">加载成功</string>
+    <string name="footer_null">我也是有底线的</string>
+    <string name="about">关于</string>
+    <string name="no_no">还木有实现此功能</string>
+    <string name="help">帮助</string>
+    <string name="close">关闭</string>
+    <string name="press_once_more">再按一次退出</string>
+
+    <!-- gank fragment -->
+    <string name="gank">干货</string>
+    <string name="search">搜索</string>
+    <string name="gank_help_msg">- 长按可以 收藏/取消收藏 选中的项目</string>
+    <string name="share_article">哎哟，发现不错的干货「%1$s」，传送门→_→%2$s</string>
+    <string name="share_gank">分享干货</string>
+
+    <!-- info fragment -->
+    <string name="slogan">干客看干货，干了又干</string>
+    <string name="introduce">介绍</string>
+    <string name="setting">设置</string>
+    <string name="developer">开发者</string>
+    <string name="open_source_license">开源协议</string>
+    <string name="share_application">分享应用</string>
+    <string name="day_mode">日间模式</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="weibo">微博</string>
+    <string name="github">GitHub</string>
+    <string name="gmail">Gmail</string>
+    <string name="codpoe">
+        Codpoe\n
+        Android 开发者
+    </string>
+    <string name="codpoe_weibo_url">http://weibo.com/u/2757541610</string>
+    <string name="codpoe_github_url">https://github.com/codpoe</string>
+    <string name="codpoe_mail">codpoe.me@gmail.com</string>
+    <string name="introduce_content">
+        干客(Ganker)是一款浏览 iOS, Android, 前端等技术干货的应用，当然也有福利^_^\n\n
+        这是开源项目，项目地址:\nhttps://github.com/codpoe\n\n
+        感谢代码家 (http://gank.io) 提供的内容，也感谢 drakeet 的帮助。
+    </string>
+    <string name="share_application_content">
+        发现一款不错的开源的 App - 「干客」，每天更新 iOS，Android，前端等技术干货，还有可爱妹纸图。地址：https://github.com/codpoe
+    </string>
+    <string name="contact_with_me">通过以下方式联系我:</string>
+    <string name="butterknife">
+        ButterKnife\n\n
+        JakeWharton\n
+        Apache License 2.0\n
+        https://github.com/JakeWharton/butterknife
+    </string>
+    <string name="rxjava">
+        RxJava\n\n
+        Netflix, Inc\n
+        Apache License 2.0\n
+        https://github.com/ReactiveX/RxJava
+    </string>
+    <string name="rxandroid">
+        RxAndroid\n\n
+        The RxAndroid authors\n
+        Apache License 2.0\n
+        https://github.com/ReactiveX/RxAndroid
+    </string>
+    <string name="rxpermissions">
+        RxPermissions\n\n
+        tbruyelle\n
+        Apache License 2.0\n
+        https://github.com/tbruyelle/RxPermissions
+    </string>
+    <string name="retrofit">
+        Retrofit\n\n
+        Square, Inc\n
+        Apache License 2.0\n
+        https://github.com/square/retrofit
+    </string>
+    <string name="glide">
+        Glide\n\n
+        bumptech\n
+        BSD, part MIT and Apache 2.0\n
+        https://github.com/bumptech/glide
+    </string>
+    <string name="photoview">
+        PhotoView\n\n
+        Chris Banes\n
+        Apache License 2.0\n
+        https://github.com/chrisbanes/PhotoView
+    </string>
+    <string name="bottom_text">
+        「Ganker」created by Codpoe with love.
+    </string>
+
+    <!-- home fragment -->
+    <string name="home">首页</string>
+
+    <!-- iOS fragment -->
+    <string name="ios_name">iOS</string>
+
+    <!-- Android fragment -->
+    <string name="android_name">Android</string>
+
+    <!-- Web fragment -->
+    <string name="web_name">前端</string>
+
+    <!-- mark fragment -->
+    <string name="category">分类</string>
+    <string name="all">All</string>
+    <string name="xiatuijian">瞎推荐</string>
+    <string name="app">App</string>
+    <string name="fuli">福利</string>
+    <string name="tuozhan">拓展资源</string>
+    <string name="mark_help_msg">- 右滑可以取消收藏选中的项目。</string>
+
+    <!-- picture activity -->
+    <string name="share">分享</string>
+    <string name="copy_url">复制链接</string>
+    <string name="save">保存到手机</string>
+    <string name="share_pic">分享妹纸</string>
+    <string name="copy_success">已复制到剪贴板</string>
+    <string name="save_success_to">成功保存到：</string>
+    <string name="save_error">出错啦！请再试一下：</string>
+    <string name="permission_error">请到「设置-应用-权限管理」添加相应权限</string>
+
+    <!-- web activity -->
+    <string name="open_with_browser">用浏览器打开</string>
+
+    <!-- mark -->
+    <string name="mark_name">收藏</string>
+    <string name="cancel_mark">取消收藏</string>
+    <string name="mark_success">已收藏</string>
+    <string name="mark_cancel_already">已取消收藏</string>
+
+    <!-- search -->
+    <string name="search_hint">搜索干货，而不是妹纸</string>
+
+</resources>

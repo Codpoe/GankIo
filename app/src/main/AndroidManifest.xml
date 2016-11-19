@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="me.codpoe.gankio"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <application
+        android:name=".app.GankIoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".main.MainActivity"
+            android:theme="@style/StartStyle"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".web.WebActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".search.SearchActivity"
+            android:windowSoftInputMode="stateUnspecified|stateHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".picture.PictureActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_picture"
+            android:theme="@style/AppTheme.Picture"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="24dp"
+    android:background="@color/dialog_bg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="@color/dialog_text"
+        android:text="@string/contact_with_me"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:foregroundTint="@android:color/white">
+
+        <TextView
+            android:id="@+id/weibo_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/dialog_icon_tint"
+            android:drawableTop="@drawable/ic_weibo"
+            android:textColor="@color/dialog_text"
+            android:textSize="14sp"
+            android:text="@string/weibo"/>
+
+        <TextView
+            android:id="@+id/github_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/dialog_icon_tint"
+            android:drawableTop="@drawable/ic_github"
+            android:textColor="@color/dialog_text"
+            android:textSize="14sp"
+            android:text="@string/github"/>
+
+        <TextView
+            android:id="@+id/mail_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/dialog_icon_tint"
+            android:drawableTop="@drawable/ic_gmail"
+            android:textColor="@color/dialog_text"
+            android:textSize="14sp"
+            android:text="@string/gmail"/>
+
+    </LinearLayout>
+
+</LinearLayout>

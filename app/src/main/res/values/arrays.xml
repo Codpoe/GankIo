@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type">
+        <item>@string/all</item>
+        <item>@string/ios_name</item>
+        <item>@string/android_name</item>
+        <item>@string/web_name</item>
+        <item>@string/app</item>
+        <item>@string/xiatuijian</item>
+        <item>@string/tuozhan</item>
+        <item>@string/fuli</item>
+    </string-array>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dialog_bg"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/mark_tv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:drawablePadding="32dp"
+        android:drawableTint="@color/dialog_icon_tint"
+        android:textColor="@color/dialog_text"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_favorite_black_24dp"
+        android:text="@string/mark_name"/>
+
+    <TextView
+        android:id="@+id/share_tv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:drawablePadding="32dp"
+        android:drawableTint="@color/dialog_icon_tint"
+        android:textColor="@color/dialog_text"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_share_white_24dp"
+        android:text="@string/share"/>
+
+</LinearLayout>

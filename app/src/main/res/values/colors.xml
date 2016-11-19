@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#55759B</color>
+    <color name="colorPrimaryDark">#55759B</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#FAFAFA</color>
+
+    <!-- picture activity -->
+    <color name="picture_bg">#000000</color>
+
+    <!-- tab layout -->
+    <color name="tab_bg">#55759B</color>
+    <color name="tab_indicator">#FFFFFF</color>
+    <color name="tab_selected_text">#FFFFFF</color>
+    <color name="tab_text">#80FFFFFF</color>
+
+    <!-- bottom navigation -->
+    <color name="bottom_nav_active">#55759B</color>
+    <color name="bottom_nav_inactive">#888888</color>
+    <color name="bottom_nav_bg">#FFFFFF</color>
+
+    <!-- mark fragment -->
+    <color name="mark_frag_toolbar_title">#FFFFFF</color>
+    <color name="no_content_view_text">#888888</color>
+    <color name="no_content_view_icon_tint">#888888</color>
+    <color name="mark_frag_nav_bg">#FFFFFF</color>
+    <color name="mark_frag_nav_text">#888888</color>
+    <color name="mark_frag_nav_tint">#55759B</color>
+
+    <!-- item home -->
+    <color name="item_home_type_text">#55759B</color>
+    <color name="item_home_icon_tint">#55759B</color>
+    <color name="item_home_bg">#FFFFFF</color>
+    <color name="item_home_title">#000000</color>
+    <color name="item_home_text">#888888</color>
+
+    <!-- item gank -->
+    <color name="item_gank_bg">#FFFFFF</color>
+    <color name="item_gank_title">#000000</color>
+    <color name="item_gank_text">#888888</color>
+
+    <!-- item info -->
+    <color name="item_info_title">#888888</color>
+    <color name="item_info_bg">#FFFFFF</color>
+    <color name="item_info_text">#000000</color>
+
+    <!-- item meizhi -->
+    <color name="item_meizhi_bg">#FFFFFF</color>
+
+    <!-- search bar -->
+    <color name="search_bar_bg">#FFFFFF</color>
+
+    <!-- dialog -->
+    <color name="dialog_bg">#FAFAFA</color>
+    <color name="dialog_text">#888888</color>
+    <color name="dialog_icon_tint">#55759B</color>
+
+</resources>

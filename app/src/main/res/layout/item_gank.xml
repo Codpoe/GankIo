@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tag_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/item_gank_bg"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp"
+    app:contentPadding="16dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/item_gank_title"
+            tools:text="iOS Chat 聊天页面引擎"/>
+
+        <TextView
+            android:id="@+id/who_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_tv"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/item_gank_text"
+            android:textSize="12sp"
+            tools:text="via. 代码家"/>
+
+        <TextView
+            android:id="@+id/type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_tv"
+            android:layout_toRightOf="@id/who_tv"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            android:textColor="@color/item_gank_text"
+            android:textSize="12sp"
+            tools:text="type. iOS"/>
+
+        <TextView
+            android:id="@+id/publish_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_tv"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/item_gank_text"
+            android:textSize="12sp"
+            tools:text="2016-9-22"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/category">
+        <menu>
+            <group  android:checkableBehavior="single">
+                <item
+                    android:id="@+id/all_menu_item"
+                    android:title="@string/all"/>
+                <item
+                    android:id="@+id/ios_menu_item"
+                    android:title="@string/ios_name"/>
+                <item
+                    android:id="@+id/android_menu_item"
+                    android:title="@string/android_name"/>
+                <item
+                    android:id="@+id/web_menu_item"
+                    android:title="@string/web_name"/>
+                <item
+                    android:id="@+id/app_menu_item"
+                    android:title="@string/app"/>
+                <item
+                    android:id="@+id/xiatuijian_menu_item"
+                    android:title="@string/xiatuijian"/>
+                <item
+                    android:id="@+id/tuozhan_menu_item"
+                    android:title="@string/tuozhan"/>
+                <item
+                    android:id="@+id/fuli_menu_item"
+                    android:title="@string/fuli"/>
+            </group>
+        </menu>
+    </item>
+</menu>
