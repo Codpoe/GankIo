@@ -48,7 +48,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:titleTextColor="@color/tab_selected_text"
-                tools:title="拓展资源"/>
+                tools:title="拓展资源">
+
+                <me.codpoe.gankio.widget.ArrowView
+                    android:id="@+id/sheet_arrow_view"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:arrow_color="@color/tab_selected_text"/>
+
+            </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -67,18 +78,16 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="match_parent">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                android:layout_height="match_parent"/>
 
             <android.support.v4.widget.ContentLoadingProgressBar
-                android:id="@+id/progress_bar"
-                app:theme="@style/Widget.AppCompat.ProgressBar"
+                android:id="@+id/sheet_progress_bar"
+                android:theme="@style/Widget.AppCompat.ProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

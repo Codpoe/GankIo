@@ -17,6 +17,10 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="ArrowView">
+        <attr name="arrow_color" format="color"/>
+    </declare-styleable>
+
 </resources>
 
 

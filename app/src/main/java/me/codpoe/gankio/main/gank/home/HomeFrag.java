@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -40,6 +40,7 @@ import me.codpoe.gankio.main.gank.item.GankSubItem;
 import me.codpoe.gankio.main.gank.item.GankSubItemViewProvider;
 import me.codpoe.gankio.util.DialogUtil;
 import me.codpoe.gankio.web.WebActivity;
+import me.codpoe.gankio.widget.ArrowView;
 import me.drakeet.multitype.Item;
 import me.drakeet.multitype.Items;
 import me.drakeet.multitype.MultiTypeAdapter;
@@ -68,7 +69,8 @@ public class HomeFrag extends Fragment implements
     private BottomSheetBehavior behavior;
     private AppBarLayout mSheetAppBarLay;
     private Toolbar mSheetToolbar;
-    private ContentLoadingProgressBar mProgressBar;
+    private ArrowView mSheetArrowView;
+    private ContentLoadingProgressBar mSheetProgressBar;
     private RecyclerView mSheetRv;
     private LinearLayoutManager mSheetLayoutManager;
     private List<AllBean.ResultsBean> mSheetList;
@@ -107,7 +109,7 @@ public class HomeFrag extends Fragment implements
         // set up sheet recyclerview
         mSheetAppBarLay = (AppBarLayout) getActivity().findViewById(R.id.sheet_appbar_lay);
         mSheetToolbar = (Toolbar) getActivity().findViewById(R.id.sheet_toolbar);
-        mProgressBar = (ContentLoadingProgressBar) getActivity().findViewById(R.id.progress_bar);
+        mSheetProgressBar = (ContentLoadingProgressBar) getActivity().findViewById(R.id.sheet_progress_bar);
         mSheetRv = (RecyclerView) getActivity().findViewById(R.id.rv);
         mSheetList = new ArrayList<>();
         mSheetLayoutManager = new LinearLayoutManager(getContext());
@@ -127,6 +129,19 @@ public class HomeFrag extends Fragment implements
         });
         mSheetRvAdapter.setOnItemClickListener(this);
 
+        // set up arrow view
+        mSheetArrowView = (ArrowView) getActivity().findViewById(R.id.sheet_arrow_view);
+        mSheetArrowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (behavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                } else {
+                    behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+                }
+            }
+        });
+
         // set up bottom sheet behavior
         View v = getActivity().findViewById(R.id.bottom_sheet);
         behavior = BottomSheetBehavior.from(v);
@@ -134,6 +149,7 @@ public class HomeFrag extends Fragment implements
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 if (mSheetAppBarLay.getVisibility() == View.INVISIBLE) {
+                    mSheetProgressBar.show();
                     Animator animator = ViewAnimationUtils.createCircularReveal(
                             mSheetAppBarLay,
                             (mSheetAppBarLay.getLeft() + mSheetAppBarLay.getRight()) / 2,
@@ -146,7 +162,6 @@ public class HomeFrag extends Fragment implements
                         public void onAnimationStart(Animator animation) {
                             mSheetToolbar.setTitle(mSheetType);
                             mSheetAppBarLay.setVisibility(View.VISIBLE);
-                            mProgressBar.show();
                         }
 
                         @Override
@@ -166,7 +181,7 @@ public class HomeFrag extends Fragment implements
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
+                mSheetArrowView.setOffset(slideOffset);
             }
         });
         behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
@@ -190,9 +205,9 @@ public class HomeFrag extends Fragment implements
         if (mSheetPage == 1) {
             mSheetList.clear();
         }
-        mProgressBar.hide();
         mSheetList.addAll(list);
         mSheetRvAdapter.notifyDataSetChanged();
+        mSheetProgressBar.hide();
     }
 
     @Override
