@@ -16,13 +16,20 @@ import me.codpoe.gankio.R;
 
 public class ArrowView extends View {
 
+    private static final int TOP_TO_BOTTOM = 0;
+    private static final int BOTTOM_TO_TOP = 1;
+    private static final int LEFT_TO_RIGHT = 2;
+    private static final int RIGHT_TO_LEFT = 4;
+
     private int mWidth;
     private int mHeight;
     private int mCenterX;
     private int mCenterY;
-    private Paint mPaint;
-    private int mColor;
     private float mOffset;
+    private Paint mPaint;
+    private int mPaintWidth;
+    private int mColor;
+    private int mOrientation;
 
     public ArrowView(Context context) {
         this(context, null);
@@ -36,14 +43,16 @@ public class ArrowView extends View {
         super(context, attrs, defStyleAttr);
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ArrowView);
+            mOrientation = typedArray.getInt(R.styleable.ArrowView_arrow_orientation, TOP_TO_BOTTOM);
             mColor = typedArray.getColor(R.styleable.ArrowView_arrow_color, getResources().getColor(R.color.colorAccent));
+            mPaintWidth = typedArray.getDimensionPixelSize(R.styleable.ArrowView_arrow_width, 6);
             typedArray.recycle();
         }
 
         mPaint = new Paint();
         mPaint.setColor(mColor);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(5);
+        mPaint.setStrokeWidth(mPaintWidth);
         mPaint.setStrokeCap(Paint.Cap.SQUARE);
         mPaint.setAntiAlias(true);
     }
@@ -66,9 +75,32 @@ public class ArrowView extends View {
         canvas.translate(mCenterX, mCenterY);
 
         Path path = new Path();
-        path.moveTo(-mWidth * 0.1f, 0);
-        path.lineTo(0, -mHeight * 0.1f + mHeight * 0.2f * mOffset);
-        path.lineTo(mWidth * 0.1f, 0);
+        switch (mOrientation) {
+            case TOP_TO_BOTTOM:
+                float leftRight1 = mHeight * (0.05f - 0.1f * mOffset);
+                path.moveTo(-mWidth * 0.1f, leftRight1); // 0.05 <-> -0.05
+                path.lineTo(0, mHeight * (0.1f * mOffset - 0.05f)); // -0.05 <-> 0.05
+                path.lineTo(mWidth * 0.1f, leftRight1); // 0.05 <-> -0.05
+                break;
+            case BOTTOM_TO_TOP:
+                float leftRight2 = mHeight * (0.1f * mOffset - 0.05f);
+                path.moveTo(-mWidth * 0.1f, leftRight2); // -0.05 <-> 0.05
+                path.lineTo(0, mHeight * (0.05f - 0.1f * mOffset)); // 0.05 <-> -0.05
+                path.lineTo(mWidth * 0.1f, leftRight2); // -0.05 <-> 0.05
+                break;
+            case LEFT_TO_RIGHT:
+                float topBottom1 = mWidth * (0.05f - 0.1f * mOffset);
+                path.moveTo(topBottom1, -mHeight * 0.1f); // 0.05 <-> -0.05
+                path.lineTo(mWidth * (0.1f * mOffset - 0.05f), 0); // -0.05 <-> 0.05
+                path.lineTo(topBottom1, mHeight * 0.1f); // 0.05 <-> -0.05
+                break;
+            case RIGHT_TO_LEFT:
+                float topBottom2 = mWidth * (0.1f * mOffset - 0.05f);
+                path.moveTo(topBottom2, -mHeight * 0.1f); // -0.05 <-> 0.05
+                path.lineTo(mWidth * (0.05f - 0.1f * mOffset), 0); // 0.05 <-> -0.05
+                path.lineTo(topBottom2, mHeight * 0.1f); // -0.05 <-> 0.05
+                break;
+        }
 
         canvas.drawPath(path, mPaint);
         canvas.restore();

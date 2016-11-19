@@ -46,7 +46,9 @@ dependencies {
         exclude group: 'com.android.support'
     })
     compile 'com.tencent.bugly:crashreport:2.3.1'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
     apt 'com.google.dagger:dagger-compiler:2.4'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
 }

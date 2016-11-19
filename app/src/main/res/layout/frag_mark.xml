@@ -12,12 +12,14 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/mark_toolbar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways|snap">
+
             <TextView
                 android:id="@+id/title_tv"
                 android:layout_width="wrap_content"
@@ -25,8 +27,22 @@
                 android:textSize="18sp"
                 android:textColor="@color/mark_frag_toolbar_title"
                 android:text="@string/all"/>
+
+            <me.codpoe.gankio.widget.ArrowView
+                android:id="@+id/mark_arrow_view"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                app:arrow_orientation="LEFT_TO_RIGHT"
+                app:arrow_color="@android:color/white"
+                app:arrow_width="2dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"/>
+
         </android.support.v7.widget.Toolbar>
+
     </android.support.design.widget.AppBarLayout>
+
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/mark_drawer"
         android:layout_width="match_parent"

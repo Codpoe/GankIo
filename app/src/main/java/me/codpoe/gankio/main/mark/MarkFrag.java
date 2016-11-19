@@ -38,6 +38,7 @@ import me.codpoe.gankio.main.mark.adapter.MarkRvAdapter;
 import me.codpoe.gankio.util.DialogUtil;
 import me.codpoe.gankio.util.DpPxUtil;
 import me.codpoe.gankio.web.WebActivity;
+import me.codpoe.gankio.widget.ArrowView;
 
 /**
  * Created by Codpoe on 2016/10/8.
@@ -53,6 +54,8 @@ public class MarkFrag extends Fragment implements
     Toolbar mToolbar;
     @BindView(R.id.title_tv)
     TextView mTitleTv;
+    @BindView(R.id.mark_arrow_view)
+    ArrowView mArrowView;
     @BindView(R.id.app_bar_lay)
     AppBarLayout mAppBarLay;
     @BindView(R.id.mark_drawer)
@@ -106,15 +109,8 @@ public class MarkFrag extends Fragment implements
         mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getOrder()) {
-                    case 0:
-                        if (!mDrawerLay.isDrawerOpen(mTypeNav)) {
-                            mDrawerLay.openDrawer(mTypeNav);
-                        } else {
-                            mDrawerLay.closeDrawers();
-                        }
-                        break;
-                    case 1:
+                switch (item.getItemId()) {
+                    case R.id.mark_help_menu_item:
                         DialogUtil.showNormalDialog(getActivity(), getString(R.string.mark_help_msg));
                         break;
                 }
@@ -122,7 +118,25 @@ public class MarkFrag extends Fragment implements
             }
         });
 
+        // set up ArrowView
+        mArrowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!mDrawerLay.isDrawerOpen(mTypeNav)) {
+                    mDrawerLay.openDrawer(mTypeNav);
+                } else {
+                    mDrawerLay.closeDrawers();
+                }
+            }
+        });
+
         // set up drawer
+        mDrawerLay.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                mArrowView.setOffset(slideOffset);
+            }
+        });
         mTypeNav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

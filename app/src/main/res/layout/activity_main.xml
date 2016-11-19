@@ -55,9 +55,11 @@
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
+                    app:arrow_orientation="TOP_TO_BOTTOM"
+                    app:arrow_color="@color/tab_selected_text"
+                    app:arrow_width="2dp"
                     android:clickable="true"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    app:arrow_color="@color/tab_selected_text"/>
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
             </android.support.v7.widget.Toolbar>
 

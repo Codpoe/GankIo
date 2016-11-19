@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import io.realm.Realm;
@@ -36,6 +37,13 @@ public class GankIoApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // LeakCanary
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(this);
+
         instance = this;
 
         // Bugly

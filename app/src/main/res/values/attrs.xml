@@ -18,7 +18,14 @@
     </declare-styleable>
 
     <declare-styleable name="ArrowView">
+        <attr name="arrow_orientation">
+            <enum name="TOP_TO_BOTTOM" value="0"/>
+            <enum name="BOTTOM_TO_TOP" value="1"/>
+            <enum name="LEFT_TO_RIGHT" value="2"/>
+            <enum name="RIGHT_TO_LEFT" value="4"/>
+        </attr>
         <attr name="arrow_color" format="color"/>
+        <attr name="arrow_width" format="dimension"/>
     </declare-styleable>
 
 </resources>
