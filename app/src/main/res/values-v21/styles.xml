@@ -10,11 +10,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="StartStyle" parent="AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">@drawable/start</item>
-        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 

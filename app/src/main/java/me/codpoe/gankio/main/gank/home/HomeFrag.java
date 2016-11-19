@@ -7,17 +7,18 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,8 @@ public class HomeFrag extends Fragment implements
     private Items mItems;
 
     private BottomSheetBehavior behavior;
-    private TextView mSheetTypeTv;
+    private AppBarLayout mSheetAppBarLay;
+    private Toolbar mSheetToolbar;
     private ContentLoadingProgressBar mProgressBar;
     private RecyclerView mSheetRv;
     private LinearLayoutManager mSheetLayoutManager;
@@ -103,14 +105,15 @@ public class HomeFrag extends Fragment implements
         mHomeRv.setAdapter(mAdapter);
 
         // set up sheet recyclerview
-        mSheetTypeTv = (TextView) getActivity().findViewById(R.id.type_tv);
+        mSheetAppBarLay = (AppBarLayout) getActivity().findViewById(R.id.sheet_appbar_lay);
+        mSheetToolbar = (Toolbar) getActivity().findViewById(R.id.sheet_toolbar);
         mProgressBar = (ContentLoadingProgressBar) getActivity().findViewById(R.id.progress_bar);
         mSheetRv = (RecyclerView) getActivity().findViewById(R.id.rv);
         mSheetList = new ArrayList<>();
         mSheetLayoutManager = new LinearLayoutManager(getContext());
         mSheetRvAdapter = new CommonRvAdapter(getContext(), mSheetList);
         mSheetRv.setLayoutManager(mSheetLayoutManager);
-        mSheetRv.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.HORIZONTAL));
+        mSheetRv.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         mSheetRv.setAdapter(mSheetRvAdapter);
         mSheetRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -130,19 +133,19 @@ public class HomeFrag extends Fragment implements
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                if (mSheetTypeTv.getVisibility() == View.INVISIBLE) {
+                if (mSheetAppBarLay.getVisibility() == View.INVISIBLE) {
                     Animator animator = ViewAnimationUtils.createCircularReveal(
-                            mSheetTypeTv,
-                            (mSheetTypeTv.getLeft() + mSheetTypeTv.getRight()) / 2,
-                            + mSheetTypeTv.getBottom(),
+                            mSheetAppBarLay,
+                            (mSheetAppBarLay.getLeft() + mSheetAppBarLay.getRight()) / 2,
+                            + mSheetAppBarLay.getBottom(),
                             0,
-                            mSheetTypeTv.getWidth()
-                    ).setDuration(500);
+                            mSheetAppBarLay.getWidth()
+                    ).setDuration(700);
                     animator.addListener(new AnimatorListenerAdapter() {
                         @Override
                         public void onAnimationStart(Animator animation) {
-                            mSheetTypeTv.setText(mSheetType);
-                            mSheetTypeTv.setVisibility(View.VISIBLE);
+                            mSheetToolbar.setTitle(mSheetType);
+                            mSheetAppBarLay.setVisibility(View.VISIBLE);
                             mProgressBar.show();
                         }
 
@@ -155,7 +158,7 @@ public class HomeFrag extends Fragment implements
                     animator.start();
                 }
                 if (newState == BottomSheetBehavior.STATE_HIDDEN) {
-                    mSheetTypeTv.setVisibility(View.INVISIBLE);
+                    mSheetAppBarLay.setVisibility(View.INVISIBLE);
                     mSheetList.clear();
                     mSheetRvAdapter.notifyDataSetChanged();
                 }
@@ -235,16 +238,10 @@ public class HomeFrag extends Fragment implements
                 break;
             case "App":
                 mSheetType = getString(R.string.app);
-                mSheetPage = 1;
-                mPresenter.loadDataByType(mSheetType, mSheetPage);
-                mSheetTypeTv.setText(mSheetType);
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 break;
             case "瞎推荐":
                 mSheetType = getString(R.string.xiatuijian);
-                mSheetPage = 1;
-                mPresenter.loadDataByType(mSheetType, mSheetPage);
-                mSheetTypeTv.setText(mSheetType);
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 break;
         }

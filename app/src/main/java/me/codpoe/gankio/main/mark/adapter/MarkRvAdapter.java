@@ -62,11 +62,8 @@ public class MarkRvAdapter extends RecyclerView.Adapter<MarkRvAdapter.ViewHolder
         mListener = listener;
     }
 
-    public interface OnMarkItemClickListener {
-        void onMarkItemClick(View view, int position);
-    }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.title_tv)
         TextView mTitleTv;
@@ -81,6 +78,10 @@ public class MarkRvAdapter extends RecyclerView.Adapter<MarkRvAdapter.ViewHolder
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    public interface OnMarkItemClickListener {
+        void onMarkItemClick(View view, int position);
     }
 
 }

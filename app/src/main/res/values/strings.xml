@@ -86,6 +86,18 @@
         BSD, part MIT and Apache 2.0\n
         https://github.com/bumptech/glide
     </string>
+    <string name="dagger2">
+        Dagger 2\n\n
+        The Dagger Authors\n
+        Apache License 2.0\n
+        https://github.com/google/dagger
+    </string>
+    <string name="multitype">
+        MultiType\n\n
+        drakeet\n
+        Apache License 2.0\n
+        https://github.com/drakeet/Multitype
+    </string>
     <string name="photoview">
         PhotoView\n\n
         Chris Banes\n
@@ -116,6 +128,7 @@
     <string name="fuli">福利</string>
     <string name="tuozhan">拓展资源</string>
     <string name="mark_help_msg">- 右滑可以取消收藏选中的项目。</string>
+    <string name="mark_footer_text">我也是有底线的</string>
 
     <!-- picture activity -->
     <string name="share">分享</string>

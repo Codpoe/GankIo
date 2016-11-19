@@ -136,6 +136,8 @@ public class InfoFrag extends Fragment implements InfoContract.View {
             mItems.add(new OpenSourceItem(getString(R.string.rxpermissions)));
             mItems.add(new OpenSourceItem(getString(R.string.retrofit)));
             mItems.add(new OpenSourceItem(getString(R.string.glide)));
+            mItems.add(new OpenSourceItem(getString(R.string.dagger2)));
+            mItems.add(new OpenSourceItem(getString(R.string.multitype)));
             mItems.add(new OpenSourceItem(getString(R.string.photoview)));
             mAdapter.notifyDataSetChanged();
         }

@@ -75,9 +75,6 @@ public class SearchActivity extends AppCompatActivity implements
         ButterKnife.bind(this);
         DaggerSearchComponent.builder().searchModule(new SearchModule(this)).build().inject(this);
 
-        // set up presenter
-        mPresenter = new SearchPresenter(this);
-
         // get the text searched
         parseIntent();
 
@@ -144,6 +141,7 @@ public class SearchActivity extends AppCompatActivity implements
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 if (mLayoutManager.findLastVisibleItemPosition() >= mLayoutManager.getItemCount() - 2 && dy > 0) {
+                    mRefreshLay.setRefreshing(true);
                     mPresenter.loadSearch(mToSearch, "all", ++mPage);
                 }
             }

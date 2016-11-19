@@ -91,9 +91,8 @@ public class AnimationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public Animator[] getAnimator(View view) {
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", 0.8f, 1f);
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(view, "scaleY", 0.8f, 1f);
-        ObjectAnimator alpha = ObjectAnimator.ofFloat(view, "alpha", 0.5f, 1f);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", 0.85f, 1f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(view, "scaleY", 0.85f, 1f);
         return new ObjectAnimator[] {scaleX, scaleY};
     }
 
