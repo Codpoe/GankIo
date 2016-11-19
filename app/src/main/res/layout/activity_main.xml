@@ -44,7 +44,7 @@
             android:paddingLeft="16dp"
             android:paddingBottom="16dp"
             android:textSize="20sp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/sheet_title_text"
             tools:text="拓展资源"
             android:visibility="invisible"/>
 

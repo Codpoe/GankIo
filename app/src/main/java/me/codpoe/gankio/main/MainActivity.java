@@ -153,9 +153,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void showMsg(String msg) {
         Snackbar snackbar = Snackbar.make(mMainCoorLay, msg, Snackbar.LENGTH_SHORT);
-//        Animation anim = AnimationUtils.loadAnimation(this, R.anim.snackbar_bottom_in);
-//        anim.setDuration(300);
-//        snackbar.getView().setAnimation(anim);
         if (!mBottomNav.isHidden()) {
             ViewGroup.LayoutParams vl = snackbar.getView().getLayoutParams();
             CoordinatorLayout.LayoutParams cl = new CoordinatorLayout.LayoutParams(vl.width, vl.height);

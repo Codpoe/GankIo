@@ -10,6 +10,7 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -91,7 +92,17 @@ public class HomeFrag extends Fragment implements
             }
         });
 
-        /** set up sheet recyclerview */
+        // set up recycler view
+        mItems = new Items();
+        mAdapter = new MultiTypeAdapter(mItems);
+        mAdapter.register(GankHeadItem.class, new GankHeadItemViewProvider(this));
+        mAdapter.register(GankSubItem.class, new GankSubItemViewProvider(this));
+        mAdapter.register(GankImgSubItem.class, new GankImgSubItemViewProvider(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        mHomeRv.setLayoutManager(layoutManager);
+        mHomeRv.setAdapter(mAdapter);
+
+        // set up sheet recyclerview
         mSheetTypeTv = (TextView) getActivity().findViewById(R.id.type_tv);
         mProgressBar = (ContentLoadingProgressBar) getActivity().findViewById(R.id.progress_bar);
         mSheetRv = (RecyclerView) getActivity().findViewById(R.id.rv);
@@ -99,6 +110,7 @@ public class HomeFrag extends Fragment implements
         mSheetLayoutManager = new LinearLayoutManager(getContext());
         mSheetRvAdapter = new CommonRvAdapter(getContext(), mSheetList);
         mSheetRv.setLayoutManager(mSheetLayoutManager);
+        mSheetRv.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.HORIZONTAL));
         mSheetRv.setAdapter(mSheetRvAdapter);
         mSheetRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -112,7 +124,7 @@ public class HomeFrag extends Fragment implements
         });
         mSheetRvAdapter.setOnItemClickListener(this);
 
-        /** set up bottom sheet behavior */
+        // set up bottom sheet behavior
         View v = getActivity().findViewById(R.id.bottom_sheet);
         behavior = BottomSheetBehavior.from(v);
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
@@ -155,16 +167,6 @@ public class HomeFrag extends Fragment implements
             }
         });
         behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-
-        // set up recycler view
-        mItems = new Items();
-        mAdapter = new MultiTypeAdapter(mItems);
-        mAdapter.register(GankHeadItem.class, new GankHeadItemViewProvider(this));
-        mAdapter.register(GankSubItem.class, new GankSubItemViewProvider(this));
-        mAdapter.register(GankImgSubItem.class, new GankImgSubItemViewProvider(this));
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        mHomeRv.setLayoutManager(layoutManager);
-        mHomeRv.setAdapter(mAdapter);
 
         // load data
         view.post(new Runnable() {

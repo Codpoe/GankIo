@@ -5,6 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#FAFAFA</color>
 
+    <!-- bottom sheet -->
+    <color name="sheet_title_text">#FFFFFF</color>
+
     <!-- picture activity -->
     <color name="picture_bg">#000000</color>
 
