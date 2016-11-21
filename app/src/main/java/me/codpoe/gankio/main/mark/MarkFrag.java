@@ -111,7 +111,7 @@ public class MarkFrag extends Fragment implements
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.mark_help_menu_item:
-                        DialogUtil.showNormalDialog(getActivity(), getString(R.string.mark_help_msg));
+                        DialogUtil.showNormalDialog(getContext(), getString(R.string.mark_help_msg));
                         break;
                 }
                 return true;
@@ -269,7 +269,7 @@ public class MarkFrag extends Fragment implements
     public void changeToolbarTitle(final int type) {
         if (type != mCurType) {
             mCurType = type;
-            Animator animator1 = AnimatorInflater.loadAnimator(getActivity(), R.animator.title_left_out);
+            Animator animator1 = AnimatorInflater.loadAnimator(getContext(), R.animator.title_left_out);
             final Animator animator2 = AnimatorInflater.loadAnimator(getActivity(), R.animator.title_left_in);
             animator1.setTarget(mTitleTv);
             animator2.setTarget(mTitleTv);

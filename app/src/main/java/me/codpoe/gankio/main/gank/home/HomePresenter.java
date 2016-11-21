@@ -29,6 +29,8 @@ import rx.functions.Func1;
 
 public class HomePresenter implements HomeContract.Presenter {
 
+    private static final String NO_CONTENT = "no content";
+
     private HomeContract.View mView;
     private Repository mRepository;
 
@@ -68,7 +70,9 @@ public class HomePresenter implements HomeContract.Presenter {
 
                     @Override
                     public void onError(Throwable e) {
-                        loadData(loadOldDate());
+                        if (e.getMessage().equals(NO_CONTENT)) {
+                            loadData(loadDate(true));
+                        }
                     }
 
                     @Override
@@ -101,27 +105,27 @@ public class HomePresenter implements HomeContract.Presenter {
     }
 
     @Override
-    public String loadDate() {
+    public String loadDate(boolean isNull) {
 
         Calendar calendar = Calendar.getInstance();
 
-        switch (calendar.get(Calendar.DAY_OF_WEEK)) {
-            case 1:
-                calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 2);
-                break;
-            case 7:
-                calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);
-                break;
-            default:
-                break;
+        if (!isNull) {
+            switch (calendar.get(Calendar.DAY_OF_WEEK)) {
+                case Calendar.SUNDAY:
+                    calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 2);
+                    break;
+                case Calendar.SATURDAY:
+                    calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);
+                    break;
+                default:
+                    break;
+            }
+        } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+            calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 3);
+        } else {
+            calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);
         }
-        return new SimpleDateFormat("yyyy/MM/dd").format(calendar.getTime());
-    }
-
-    @Override
-    public String loadOldDate() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);
+        
         return new SimpleDateFormat("yyyy/MM/dd").format(calendar.getTime());
     }
 

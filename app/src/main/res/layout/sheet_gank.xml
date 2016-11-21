@@ -19,10 +19,9 @@
         android:background="?attr/selectableItemBackground"
         android:gravity="center_vertical"
         android:drawablePadding="32dp"
-        android:drawableTint="@color/dialog_icon_tint"
         android:textColor="@color/dialog_text"
         android:textSize="16sp"
-        android:drawableLeft="@drawable/ic_favorite_black_24dp"
+        android:drawableLeft="@drawable/bitmap_ic_favorite"
         android:text="@string/mark_name"/>
 
     <TextView
@@ -35,10 +34,9 @@
         android:background="?attr/selectableItemBackground"
         android:gravity="center_vertical"
         android:drawablePadding="32dp"
-        android:drawableTint="@color/dialog_icon_tint"
         android:textColor="@color/dialog_text"
         android:textSize="16sp"
-        android:drawableLeft="@drawable/ic_share_white_24dp"
+        android:drawableLeft="@drawable/bitmap_ic_share"
         android:text="@string/share"/>
 
 </LinearLayout>

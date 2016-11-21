@@ -19,6 +19,8 @@ import rx.functions.Func1;
 
 public class Repository {
 
+    private static final String NO_CONTENT = "no content";
+
     private static Repository sRepository;
     private Realm mRealm;
 
@@ -48,7 +50,7 @@ public class Repository {
                         if (dayBean.getCategory().size() != 0) {
                             return Observable.just(dayBean.getResults());
                         } else {
-                            return Observable.error(new Exception());
+                            return Observable.error(new Throwable(NO_CONTENT));
                         }
                     }
                 });

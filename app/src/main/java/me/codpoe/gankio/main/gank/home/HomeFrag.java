@@ -92,7 +92,7 @@ public class HomeFrag extends Fragment implements
             @Override
             public void onRefresh() {
                 mItems.clear();
-                mPresenter.loadData(mPresenter.loadDate());
+                mPresenter.loadData(mPresenter.loadDate(false));
             }
         });
 
@@ -192,7 +192,7 @@ public class HomeFrag extends Fragment implements
             public void run() {
                 mRefreshLay.setRefreshing(true);
                 mItems.clear();
-                mPresenter.loadData(mPresenter.loadDate());
+                mPresenter.loadData(mPresenter.loadDate(false));
             }
         });
 

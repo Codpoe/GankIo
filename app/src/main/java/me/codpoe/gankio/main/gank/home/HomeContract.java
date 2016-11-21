@@ -26,8 +26,7 @@ public interface HomeContract {
     interface Presenter {
         void loadData(String day);
         void loadDataByType(String type, int page);
-        String loadDate();
-        String loadOldDate();
+        String loadDate(boolean isNull);
         List<Item> flattenData(List<DayBean.ResultsBean.GankBean> postList);
         void saveData(GankSubItem item);
         void saveSheetData(AllBean.ResultsBean resultsBean);
