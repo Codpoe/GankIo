@@ -1,16 +1,11 @@
 <resources>
-    <string name="app_name">GankIo</string>
+    <string name="app_name">干客</string>
     <string name="title_activity_picture">picture</string>
 
     <!-- main activity -->
-    <string name="gankIo">Gank.io</string>
-    <string name="ganker">干客</string>
     <string name="meizhi_name">妹纸</string>
-    <string name="toolbar_title">Gank</string>
-    <string name="success">加载成功</string>
     <string name="footer_null">我也是有底线的</string>
     <string name="about">关于</string>
-    <string name="no_no">还木有实现此功能</string>
     <string name="help">帮助</string>
     <string name="close">关闭</string>
     <string name="press_once_more">再按一次退出</string>
@@ -22,14 +17,21 @@
     <string name="share_article">哎哟，发现不错的干货「%1$s」，传送门→_→%2$s</string>
     <string name="share_gank">分享干货</string>
 
+    <!-- home fragment -->
+    <string name="home">首页</string>
+
+    <!-- iOS fragment -->
+    <string name="ios_name">iOS</string>
+
+    <!-- Android fragment -->
+    <string name="android_name">Android</string>
+
     <!-- info fragment -->
-    <string name="slogan">干客看干货，干了又干</string>
     <string name="introduce">介绍</string>
     <string name="setting">设置</string>
     <string name="developer">开发者</string>
     <string name="open_source_license">开源协议</string>
     <string name="share_application">分享应用</string>
-    <string name="day_mode">日间模式</string>
     <string name="night_mode">夜间模式</string>
     <string name="weibo">微博</string>
     <string name="github">GitHub</string>
@@ -108,15 +110,6 @@
         「Ganker」created by Codpoe with love.
     </string>
 
-    <!-- home fragment -->
-    <string name="home">首页</string>
-
-    <!-- iOS fragment -->
-    <string name="ios_name">iOS</string>
-
-    <!-- Android fragment -->
-    <string name="android_name">Android</string>
-
     <!-- Web fragment -->
     <string name="web_name">前端</string>
 
@@ -128,7 +121,6 @@
     <string name="fuli">福利</string>
     <string name="tuozhan">拓展资源</string>
     <string name="mark_help_msg">- 右滑可以取消收藏选中的项目。</string>
-    <string name="mark_footer_text">我也是有底线的</string>
 
     <!-- picture activity -->
     <string name="share">分享</string>
@@ -145,8 +137,8 @@
 
     <!-- mark -->
     <string name="mark_name">收藏</string>
-    <string name="cancel_mark">取消收藏</string>
     <string name="mark_success">已收藏</string>
+    <string name="cancel_mark">取消收藏</string>
     <string name="mark_cancel_already">已取消收藏</string>
 
     <!-- search -->

@@ -11,7 +11,7 @@
     app:cardCornerRadius="1dp"
     app:cardElevation="1dp"
     app:contentPadding="16dp"
-    app:cardBackgroundColor="@color/item_home_bg"
+    app:cardBackgroundColor="@color/card_bg"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground">
 

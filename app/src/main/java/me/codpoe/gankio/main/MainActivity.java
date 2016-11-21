@@ -62,16 +62,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // set up fragments
-        /**
-         * 参考 google sample: https://github.com/googlesamples/android-architecture/tree/todo-mvp/
-         * 用 FragmentManager 管理固定的一份 fragmnt(s)，
-         * 防止在 旋转屏幕 或者 内存不足而回收 的时候，在原 fragment(s) 之上再创建一份 fragment(s)，
-         * 轻则视图重叠，重则空指针崩溃。
-         * 具体做法是：
-         * 1. 先从 FragmentManager 取到相应 tag 的 fragment(s).
-         * 2. 判空，空则 new，并且打上 tag，然后 add 到 FragmentManager.
-         * 当然，如果只有一个 fragment 的话，也可以不打 tag，而根据容器 id 就可以直接取出 fragment.
-         */
         FragmentManager fm = getSupportFragmentManager();
         mGankFrag = (GankFrag) fm.findFragmentByTag("gank");
         mMarkFrag = (MarkFrag) fm.findFragmentByTag("mark");

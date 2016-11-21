@@ -9,7 +9,7 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     android:layout_marginBottom="8dp"
-    app:cardBackgroundColor="@color/item_info_bg"
+    app:cardBackgroundColor="@color/card_bg"
     app:cardElevation="1dp"
     app:contentPadding="16dp"
     android:clickable="true"

@@ -125,7 +125,7 @@ public class HomePresenter implements HomeContract.Presenter {
         } else {
             calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - 1);
         }
-        
+
         return new SimpleDateFormat("yyyy/MM/dd").format(calendar.getTime());
     }
 

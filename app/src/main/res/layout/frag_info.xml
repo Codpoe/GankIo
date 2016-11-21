@@ -21,7 +21,7 @@
             app:expandedTitleGravity="center_horizontal|top"
             app:expandedTitleMarginTop="160sp"
             app:expandedTitleTextAppearance="@style/CollapsingToolbarTitle"
-            app:title="@string/ganker">
+            app:title="@string/app_name">
 
             <ImageView
                 android:layout_width="90dp"

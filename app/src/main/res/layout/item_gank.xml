@@ -6,7 +6,7 @@
     android:id="@+id/tag_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/item_gank_bg"
+    app:cardBackgroundColor="@color/card_bg"
     app:cardCornerRadius="0dp"
     app:cardElevation="0dp"
     app:contentPadding="16dp"

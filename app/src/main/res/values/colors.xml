@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#FAFAFA</color>
 
+    <color name="main_color">#55759B</color>
+
     <!-- bottom sheet -->
     <color name="sheet_title_text">#FFFFFF</color>
 
@@ -30,28 +32,25 @@
     <color name="mark_frag_nav_text">#888888</color>
     <color name="mark_frag_nav_tint">#55759B</color>
 
+    <!-- card -->
+    <color name="card_bg">#FFFFFF</color>
+
     <!-- item home -->
     <color name="item_home_type_text">#55759B</color>
     <color name="item_home_icon_tint">#55759B</color>
-    <color name="item_home_bg">#FFFFFF</color>
     <color name="item_home_title">#000000</color>
     <color name="item_home_text">#888888</color>
 
     <!-- item gank -->
-    <color name="item_gank_bg">#FFFFFF</color>
     <color name="item_gank_title">#000000</color>
     <color name="item_gank_text">#888888</color>
 
     <!-- item info -->
     <color name="item_info_title">#888888</color>
-    <color name="item_info_bg">#FFFFFF</color>
     <color name="item_info_text">#000000</color>
 
-    <!-- item meizhi -->
-    <color name="item_meizhi_bg">#FFFFFF</color>
-
     <!-- search bar -->
-    <color name="search_bar_bg">#FFFFFF</color>
+    <color name="search_bar_bg">#F1F1F1</color>
 
     <!-- dialog -->
     <color name="dialog_bg">#FAFAFA</color>

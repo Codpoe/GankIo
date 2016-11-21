@@ -12,7 +12,6 @@
     <item
         android:id="@+id/gank_help_menu_item"
         android:title="@string/help"
-        android:icon="@drawable/ic_help_black_24dp"
         app:showAsAction="never"/>
 
 </menu>

@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,7 +70,6 @@ public class GankFrag extends Fragment {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 ((MainActivity)getActivity()).showOrHideBottomNavigation(verticalOffset != -mAppBarHeight);
-                Log.d("appbar", "verticalOffset = " + verticalOffset + "  mAppBarHeight = " + -mAppBarHeight);
             }
         });
 
@@ -96,17 +94,6 @@ public class GankFrag extends Fragment {
         mSearchBarHelper = new SearchBarHelper(getContext(), mSearchBar);
 
         // set up fragments
-        /**
-         * 参考 MainActivity
-         * 跟 MainActivity 所采用的管理 fragment(s) 的方法不同的是：这里结合了 ViewPager。
-         * 按理说用 ViewPager 来管理 fragment(s) 即可，
-         * 然而在内存不足而被回收之类的情况发生时，会再 new 一份 fragment(s) 出来，
-         * 这时候如果在 fragment 之外的地方(例如: MainActivity)来调用 fragment 里面的方法，可能会因出现空指针异常而崩溃。
-         * 具体做法：
-         * 1. 从 FragmentManager 取出 Fragments 的 List.
-         * 2. 判空，空则 new，然后 add 到 FragmentManager.
-         * 由于结合了 ViewPager，不必担心 fragments 的顺序问题，也就不必打 tag 了。
-         */
         FragmentManager fm = getChildFragmentManager();
         mFragments = fm.getFragments();
         if (mFragments == null) {

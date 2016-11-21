@@ -55,7 +55,7 @@ public class MeizhiRvAdapter extends RecyclerView.Adapter<MeizhiRvAdapter.ViewHo
             holder.mMeizhiImg.getLayoutParams().height = mMeizhiList.get(holder.getAdapterPosition()).getHeight();
         }
 
-        holder.mMeizhiImg.setImageResource(R.color.item_meizhi_bg);
+        holder.mMeizhiImg.setImageResource(R.color.card_bg);
         holder.mMeizhiImg.setTag(mMeizhiList.get(position).getId());
         Glide.with(mContext)
                 .load(mMeizhiList.get(position).getUrl())
