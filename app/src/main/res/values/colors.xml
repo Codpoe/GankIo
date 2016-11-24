@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#55759B</color>
-    <color name="colorPrimaryDark">#476283</color>
+    <color name="colorPrimary">#568CA8</color>
+    <color name="colorPrimaryDark">#4b7a93</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#FAFAFA</color>
 
-    <color name="main_color">#55759B</color>
+    <color name="main_color">#568CA8</color>
 
     <!-- bottom sheet -->
     <color name="sheet_title_text">#FFFFFF</color>
@@ -14,13 +14,13 @@
     <color name="picture_bg">#000000</color>
 
     <!-- tab layout -->
-    <color name="tab_bg">#55759B</color>
+    <color name="tab_bg">#568CA8</color>
     <color name="tab_indicator">#FFFFFF</color>
     <color name="tab_selected_text">#FFFFFF</color>
     <color name="tab_text">#80FFFFFF</color>
 
     <!-- bottom navigation -->
-    <color name="bottom_nav_active">#55759B</color>
+    <color name="bottom_nav_active">#568CA8</color>
     <color name="bottom_nav_inactive">#888888</color>
     <color name="bottom_nav_bg">#FFFFFF</color>
 
@@ -30,14 +30,14 @@
     <color name="no_content_view_icon_tint">#888888</color>
     <color name="mark_frag_nav_bg">#FFFFFF</color>
     <color name="mark_frag_nav_text">#888888</color>
-    <color name="mark_frag_nav_tint">#55759B</color>
+    <color name="mark_frag_nav_tint">#568CA8</color>
 
     <!-- card -->
     <color name="card_bg">#FFFFFF</color>
 
     <!-- item home -->
-    <color name="item_home_type_text">#55759B</color>
-    <color name="item_home_icon_tint">#55759B</color>
+    <color name="item_home_type_text">#568CA8</color>
+    <color name="item_home_icon_tint">#568CA8</color>
     <color name="item_home_title">#000000</color>
     <color name="item_home_text">#888888</color>
 
@@ -55,6 +55,6 @@
     <!-- dialog -->
     <color name="dialog_bg">#FAFAFA</color>
     <color name="dialog_text">#888888</color>
-    <color name="dialog_icon_tint">#55759B</color>
+    <color name="dialog_icon_tint">#568CA8</color>
 
 </resources>

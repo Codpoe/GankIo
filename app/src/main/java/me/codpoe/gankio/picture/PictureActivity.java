@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -38,6 +39,8 @@ public class PictureActivity extends AppCompatActivity implements PictureContrac
 
     @BindView(R.id.meizhi_img)
     ImageView mMeizhiImg;
+    @BindView(R.id.progress_bar)
+    ContentLoadingProgressBar mProgressBar;
     @BindView(R.id.copy)
     ImageButton mCopyBtn;
     @BindView(R.id.save)
@@ -91,8 +94,13 @@ public class PictureActivity extends AppCompatActivity implements PictureContrac
 
         parseIntent();
 
-        // set up presenter
-        mPresenter = new PicturePresenter(this);
+        // set up progress bar
+        mProgressBar.post(new Runnable() {
+            @Override
+            public void run() {
+                mProgressBar.show();
+            }
+        });
 
         // set up image view
         Glide.with(this)
@@ -101,6 +109,7 @@ public class PictureActivity extends AppCompatActivity implements PictureContrac
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        mProgressBar.hide();
                         mMeizhiImg.setImageBitmap(resource);
                         mAttacher = new PhotoViewAttacher(mMeizhiImg, true);
                         mAttacher.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener() {
@@ -116,12 +125,6 @@ public class PictureActivity extends AppCompatActivity implements PictureContrac
                     }
                 });
 
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mPresenter = null;
     }
 
     @Override

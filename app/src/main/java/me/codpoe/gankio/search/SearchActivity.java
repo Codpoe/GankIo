@@ -150,12 +150,6 @@ public class SearchActivity extends AppCompatActivity implements
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mPresenter = null;
-    }
-
-    @Override
     public void showSearch(List<SearchBean.ResultsBean> list) {
         if (mPage == 1) {
             mSearchList.clear();

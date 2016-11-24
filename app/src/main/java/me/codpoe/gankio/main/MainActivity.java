@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -43,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private MarkFrag mMarkFrag;
     private InfoFrag mInfoFrag;
     private int mCurPos = 0;
-    private BottomSheetBehavior behavior;
-    private boolean mIsFirst = true;
     private boolean mCanExit = false;
 
     @Override

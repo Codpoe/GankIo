@@ -30,7 +30,7 @@
                 android:layout_marginTop="56dp"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax"
-                android:src="@drawable/avatar"/>
+                android:src="@mipmap/ic_launcher"/>
 
             <TextView
                 android:id="@+id/version_tv"

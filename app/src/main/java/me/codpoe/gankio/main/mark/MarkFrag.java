@@ -83,9 +83,6 @@ public class MarkFrag extends Fragment implements
         ButterKnife.bind(this, view);
         DaggerMarkComponent.builder().markModule(new MarkModule(this)).build().inject(this);
 
-        // set up presenter
-        mPresenter = new MarkPresenter(this);
-
         mTypes = new String[] {
                 getString(R.string.all),
                 getString(R.string.ios_name),
@@ -214,12 +211,6 @@ public class MarkFrag extends Fragment implements
         return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        mPresenter = null;
-    }
-
     /**
      * Lazyload
      * @param hidden
@@ -231,6 +222,12 @@ public class MarkFrag extends Fragment implements
             mIsFirstVisible = false;
             mPresenter.loadDataByType("All");
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mPresenter = null;
     }
 
     @Override

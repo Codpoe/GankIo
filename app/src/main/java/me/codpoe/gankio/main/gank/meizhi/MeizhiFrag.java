@@ -51,9 +51,6 @@ public class MeizhiFrag extends Fragment implements MeizhiContract.View {
         ButterKnife.bind(this, view);
         DaggerMeizhiComponent.builder().meizhiModule(new MeizhiModule(this)).build().inject(this);
 
-        // set up presenter
-        mPresenter = new MeizhiPresenter(this);
-
         // set up refresh layout
         mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
         mRefreshLay.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

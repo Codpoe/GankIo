@@ -65,19 +65,6 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <!--<TextView-->
-            <!--android:id="@+id/type_tv"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="@color/colorPrimary"-->
-            <!--android:gravity="bottom"-->
-            <!--android:paddingLeft="16dp"-->
-            <!--android:paddingBottom="16dp"-->
-            <!--android:textSize="20sp"-->
-            <!--android:textColor="@color/sheet_title_text"-->
-            <!--tools:text="拓展资源"-->
-            <!--android:visibility="invisible"/>-->
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">

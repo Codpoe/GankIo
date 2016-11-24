@@ -201,6 +201,12 @@ public class HomeFrag extends Fragment implements
     }
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mPresenter = null;
+    }
+
+    @Override
     public void showData(List<AllBean.ResultsBean> list) {
         if (mSheetPage == 1) {
             mSheetList.clear();

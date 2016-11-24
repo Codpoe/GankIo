@@ -60,6 +60,18 @@
 -keepattributes EnclosingMethod
 -dontwarn javax.annotation.**
 -dontwarn javax.inject.**
+
+# ButterKnife
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewBinder { *; }
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+
 # OkHttp3
 -dontwarn okhttp3.logging.**
 -keep class okhttp3.internal.**{*;}
@@ -67,7 +79,8 @@
 # Retrofit
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
-#-keepattributes Signature-keepattributes Exceptions
+-keepattributes Signature
+-keepattributes Exceptions
 # RxJava RxAndroid
 -dontwarn sun.misc.**
 -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
@@ -80,6 +93,16 @@
 -keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
     rx.internal.util.atomic.LinkedQueueNode consumerNode;
 }
+
+# Glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * implements com.bumptech.glide.request.target
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+# model
 -keep class me.codpoe.gankio.data.bean.**{*;}
 
 # Bugly

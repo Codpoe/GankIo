@@ -2,42 +2,42 @@
 <resources>
     <color name="colorPrimary">#333333</color>
     <color name="colorPrimaryDark">#2A2A2A</color>
-    <color name="colorAccent">#55759B</color>
+    <color name="colorAccent">#568CA8</color>
     <color name="colorBackground">#222222</color>
 
-    <color name="main_color">#55759B</color>
+    <color name="main_color">#568CA8</color>
 
     <!-- bottom sheet -->
-    <color name="sheet_title_text">#55759B</color>
+    <color name="sheet_title_text">#568CA8</color>
 
     <!-- picture activity -->
     <color name="picture_bg">#000000</color>
 
     <!-- tab layout -->
     <color name="tab_bg">#333333</color>
-    <color name="tab_indicator">#55759B</color>
-    <color name="tab_selected_text">#55759B</color>
-    <color name="tab_text">#8055759B</color>
+    <color name="tab_indicator">#568CA8</color>
+    <color name="tab_selected_text">#568CA8</color>
+    <color name="tab_text">#80568CA8</color>
 
     <!-- bottom navigation -->
-    <color name="bottom_nav_active">#55759B</color>
+    <color name="bottom_nav_active">#568CA8</color>
     <color name="bottom_nav_inactive">#888888</color>
     <color name="bottom_nav_bg">#333333</color>
 
     <!-- mark fragment -->
-    <color name="mark_frag_toolbar_title">#55759B</color>
+    <color name="mark_frag_toolbar_title">#568CA8</color>
     <color name="no_content_view_text">#AAAAAA</color>
     <color name="no_content_view_icon_tint">#AAAAAA</color>
     <color name="mark_frag_nav_bg">#333333</color>
     <color name="mark_frag_nav_text">#AAAAAA</color>
-    <color name="mark_frag_nav_tint">#55759B</color>
+    <color name="mark_frag_nav_tint">#568CA8</color>
 
     <!-- card -->
     <color name="card_bg">#333333</color>
 
     <!-- item home -->
-    <color name="item_home_type_text">#55759B</color>
-    <color name="item_home_icon_tint">#55759B</color>
+    <color name="item_home_type_text">#568CA8</color>
+    <color name="item_home_icon_tint">#568CA8</color>
     <color name="item_home_title">#F1F1F1</color>
     <color name="item_home_text">#AAAAAA</color>
 
@@ -55,6 +55,6 @@
     <!-- dialog -->
     <color name="dialog_bg">#222222</color>
     <color name="dialog_text">#AAAAAA</color>
-    <color name="dialog_icon_tint">#55759B</color>
+    <color name="dialog_icon_tint">#568CA8</color>
 
 </resources>

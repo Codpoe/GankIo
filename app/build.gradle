@@ -9,7 +9,7 @@ android {
         applicationId "me.codpoe.gankio"
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 6
+        versionCode 99
         versionName "0.9.9"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
