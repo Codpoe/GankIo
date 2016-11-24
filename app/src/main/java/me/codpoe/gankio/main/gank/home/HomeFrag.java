@@ -91,7 +91,6 @@ public class HomeFrag extends Fragment implements
         mRefreshLay.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mItems.clear();
                 mPresenter.loadData(mPresenter.loadDate(false));
             }
         });
@@ -207,7 +206,7 @@ public class HomeFrag extends Fragment implements
     }
 
     @Override
-    public void showData(List<AllBean.ResultsBean> list) {
+    public void showSheetData(List<AllBean.ResultsBean> list) {
         if (mSheetPage == 1) {
             mSheetList.clear();
         }
@@ -229,6 +228,11 @@ public class HomeFrag extends Fragment implements
     @Override
     public void showMsg(String msg) {
         ((MainActivity) getActivity()).showMsg(msg);
+    }
+
+    @Override
+    public void deleteAllItem() {
+        mItems.clear();
     }
 
     @Override

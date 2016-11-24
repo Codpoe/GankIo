@@ -46,6 +46,7 @@ public class HomePresenter implements HomeContract.Presenter {
                 .flatMap(new Func1<DayBean.ResultsBean, Observable<List<DayBean.ResultsBean.GankBean>>>() {
                     @Override
                     public Observable<List<DayBean.ResultsBean.GankBean>> call(DayBean.ResultsBean resultsBean) {
+                        mView.deleteAllItem();
                         return Observable.just(
                                 resultsBean.getIOS(),
                                 resultsBean.getAndroid(),
@@ -99,7 +100,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
                     @Override
                     public void onNext(List<AllBean.ResultsBean> resultsBeen) {
-                        mView.showData(resultsBeen);
+                        mView.showSheetData(resultsBeen);
                     }
                 });
     }

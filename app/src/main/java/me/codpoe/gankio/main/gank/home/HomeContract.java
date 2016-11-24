@@ -16,10 +16,11 @@ import me.drakeet.multitype.Item;
 public interface HomeContract {
 
     interface View {
-        void showData(List<AllBean.ResultsBean> list);
+        void showSheetData(List<AllBean.ResultsBean> list);
         void showItem(Item item);
         void showAllItem(List<Item> itemList);
         void showMsg(String msg);
+        void deleteAllItem();
         void complete();
     }
 
