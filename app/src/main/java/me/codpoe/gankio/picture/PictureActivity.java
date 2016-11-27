@@ -6,6 +6,7 @@ import android.animation.AnimatorInflater;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.ContentLoadingProgressBar;
@@ -94,19 +95,25 @@ public class PictureActivity extends AppCompatActivity implements PictureContrac
 
         parseIntent();
 
-        // set up progress bar
-        mProgressBar.post(new Runnable() {
-            @Override
-            public void run() {
-                mProgressBar.show();
-            }
-        });
+//        // set up progress bar
+//        mProgressBar.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                mProgressBar.show();
+//            }
+//        });
 
         // set up image view
         Glide.with(this)
                 .load(mImgUrl)
                 .asBitmap()
                 .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onLoadStarted(Drawable placeholder) {
+                        super.onLoadStarted(placeholder);
+                        mProgressBar.show();
+                    }
+
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                         mProgressBar.hide();
