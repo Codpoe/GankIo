@@ -121,7 +121,7 @@ public class HomeFrag extends Fragment implements
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 int lastPosition = mSheetLayoutManager.findLastVisibleItemPosition();
-                if (lastPosition >= mSheetLayoutManager.getItemCount() - 2 && dy > 0) {
+                if (lastPosition == mSheetLayoutManager.getItemCount() - 1 && dy > 0) {
                     mPresenter.loadDataByType(mSheetType, ++mSheetPage);
                 }
             }
@@ -210,8 +210,10 @@ public class HomeFrag extends Fragment implements
         if (mSheetPage == 1) {
             mSheetList.clear();
         }
-        mSheetList.addAll(list);
-        mSheetRvAdapter.notifyDataSetChanged();
+        for (AllBean.ResultsBean resultsBean : list) {
+            mSheetList.add(resultsBean);
+            mSheetRvAdapter.notifyItemInserted(mSheetList.size() - 1);
+        }
         mSheetProgressBar.hide();
     }
 

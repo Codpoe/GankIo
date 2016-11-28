@@ -92,8 +92,7 @@ public class AndroidFrag extends Fragment implements
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 int lastPosition = mLayoutManager.findLastVisibleItemPosition();
-                if (lastPosition >= mLayoutManager.getItemCount() - 2 && dy > 0) {
-                    mRefreshLay.setRefreshing(true);
+                if (lastPosition == mLayoutManager.getItemCount() - 1 && dy > 0) {
                     mPresenter.loadData(ANDROID, ++mPage);
                 }
             }
