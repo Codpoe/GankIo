@@ -106,7 +106,7 @@ public class SearchActivity extends AppCompatActivity implements
         });
 
         // set up refreshLay
-        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
+        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.main_color));
         mRefreshLay.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

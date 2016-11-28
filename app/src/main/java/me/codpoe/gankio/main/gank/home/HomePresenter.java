@@ -71,7 +71,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
                     @Override
                     public void onError(Throwable e) {
-                        if (e.getMessage().equals(NO_CONTENT)) {
+                        if (e != null && e.getMessage().equals(NO_CONTENT)) {
                             loadData(loadDate(true));
                         }
                     }

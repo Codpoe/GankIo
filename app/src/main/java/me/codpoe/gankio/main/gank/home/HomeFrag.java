@@ -87,7 +87,7 @@ public class HomeFrag extends Fragment implements
         DaggerHomeComponent.builder().homeModule(new HomeModule(this)).build().inject(this);
 
         // set up refresh layout
-        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
+        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.main_color));
         mRefreshLay.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -172,9 +172,10 @@ public class HomeFrag extends Fragment implements
                     animator.start();
                 }
                 if (newState == BottomSheetBehavior.STATE_HIDDEN) {
-                    mSheetAppBarLay.setVisibility(View.INVISIBLE);
+                    mSheetProgressBar.hide();
                     mSheetList.clear();
                     mSheetRvAdapter.notifyDataSetChanged();
+                    mSheetAppBarLay.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -210,10 +211,8 @@ public class HomeFrag extends Fragment implements
         if (mSheetPage == 1) {
             mSheetList.clear();
         }
-        for (AllBean.ResultsBean resultsBean : list) {
-            mSheetList.add(resultsBean);
-            mSheetRvAdapter.notifyItemInserted(mSheetList.size() - 1);
-        }
+        mSheetList.addAll(list);
+        mSheetRvAdapter.notifyDataSetChanged();
         mSheetProgressBar.hide();
     }
 

@@ -16,5 +16,6 @@ public interface MarkContract {
     interface Presenter {
         void loadDataByType(String type);
         void deleteDataById(String id);
+        void detachView();
     }
 }

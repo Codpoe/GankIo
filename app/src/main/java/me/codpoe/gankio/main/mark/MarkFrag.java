@@ -227,6 +227,7 @@ public class MarkFrag extends Fragment implements
     @Override
     public void onDestroy() {
         super.onDestroy();
+        mPresenter.detachView();
         mPresenter = null;
     }
 

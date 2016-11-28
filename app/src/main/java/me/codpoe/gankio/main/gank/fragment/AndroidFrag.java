@@ -65,11 +65,8 @@ public class AndroidFrag extends Fragment implements
         ButterKnife.bind(this, view);
         DaggerGankComponent.builder().gankModule(new GankModule(this)).build().inject(this);
 
-        // set up presenter
-        mPresenter = new GankPresenter(this);
-
         // set up SwipeRefreshLayout
-        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
+        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.main_color));
         mRefreshLay.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

@@ -113,19 +113,15 @@ public class Repository {
      * delete one item by id
      * @param id
      */
-    public void deleteMarkById(String id) {
-        final RealmResults<MarkBean> results = mRealm.where(MarkBean.class).equalTo("id", id).findAll();
-        mRealm.beginTransaction();
-        results.deleteAllFromRealm();
-        mRealm.commitTransaction();
-    }
-
-    /**
-     * query all item
-     * @return
-     */
-    public RealmResults<MarkBean> queryMark() {
-        return mRealm.where(MarkBean.class).findAll();
+    public void deleteMarkById(final String id) {
+//        final RealmResults<MarkBean> results = mRealm.where(MarkBean.class).equalTo("id", id).findAll();
+        mRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                mRealm.where(MarkBean.class).equalTo("id", id).findAll().deleteAllFromRealm();
+//                results.deleteAllFromRealm();
+            }
+        });
     }
 
     /**

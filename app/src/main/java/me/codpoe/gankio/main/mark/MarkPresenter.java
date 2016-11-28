@@ -66,6 +66,8 @@ public class MarkPresenter implements MarkContract.Presenter {
         mRepository.deleteMarkById(id);
     }
 
-
-
+    @Override
+    public void detachView() {
+        mCompositeSubscription.unsubscribe();
+    }
 }

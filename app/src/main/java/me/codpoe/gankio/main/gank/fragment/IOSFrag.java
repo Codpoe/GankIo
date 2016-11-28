@@ -64,7 +64,7 @@ public class IOSFrag extends Fragment implements
         DaggerGankComponent.builder().gankModule(new GankModule(this)).build().inject(this);
 
         // set up SwipeRefreshLayout
-        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
+        mRefreshLay.setColorSchemeColors(getResources().getColor(R.color.main_color));
         mRefreshLay.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
